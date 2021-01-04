@@ -71,8 +71,7 @@
     "removeComments": true
   },
   "include": [
-    "src",
-    "config"
+    "src"
   ],
   "exclude": [
     "node_modules"

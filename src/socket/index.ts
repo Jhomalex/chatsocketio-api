@@ -1,7 +1,6 @@
 import { Server, Socket } from "socket.io";
 import { createServer } from 'http';
 import { app } from "../app";
-import { ChatMessageGeneralReq } from "../interfaces/index";
 
 
 const server = createServer(app);
@@ -22,7 +21,7 @@ io.on('connection', (socket: Socket) => {
     io.emit('connections', connectedCount);
     io.emit('joinGeneral', (usernameList));
 
-    socket.on('chatMessageGeneral', (data: ChatMessageGeneralReq) => {
+    socket.on('chatMessageGeneral', (data) => {
         socket.broadcast.emit('chatMessageGeneral', data);
     });
 
